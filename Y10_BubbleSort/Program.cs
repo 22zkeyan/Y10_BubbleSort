@@ -14,6 +14,22 @@
                 }
             }
         }
+        static void OptimisedBubbleSort(int[] array) //this uses a swapped flag to allow early exit, and after each loop of the array, it decreases the length by 1, as the last element will have been sorted
+        {
+            int length = array.Length;
+            while (length > 1)
+            {
+                int last_swap = 0;
+                for (int i = 0; i < length-2; i++)
+                {
+                    if (array[i] > array[i + 1])
+                    {
+                        int temp = array[i];
+                        array[i] = array[i + 1];
+                    }
+                }
+            }
+        }
         static void Main(string[] args)
         {
             Starter();
